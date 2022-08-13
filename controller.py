@@ -45,7 +45,9 @@ class Controller(QMainWindow, Ui_MainWindow):
             r12 = float(self.r12input.toPlainText())
             r13 = float(self.r13input.toPlainText())
             r23 = float(self.r23input.toPlainText())
-            if 1 < r12 < 0 or 1 < r13 < 0 or 1 < r23 < 0:
+            if 1 < r12 or 1 < r13 or 1 < r23:
+                raise ValueError('Invalid Correlation(s)')
+            if 0 > r12 or 0 > r13 or 0 > r23:
                 raise ValueError('Invalid Correlation(s)')
 
             sum_squared_sds = (s1_sd ** 2) + (s2_sd ** 2) + (s3_sd ** 2)
