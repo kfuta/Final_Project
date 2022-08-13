@@ -61,6 +61,6 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.outputComposite.setText(f'Your composite score is {composite_score:.2f}.')
 
         except ValueError:
-            self.outputComposite.setText('Cannot calculate. Enter scores between 50 and 200 not inclusive. Enter '
-                                         'standard deviations between 1 and 50\nnot inclusive. Enter correlations '
-                                         'between 0 and 1 not inclusive.')
+            self.outputComposite.setText('Cannot calculate. Enter scores between 50 and 200 inclusive. Enter '
+                                         'standard deviations between 1 and 50\ninclusive. Enter correlations '
+                                         'between 0 and 1 inclusive.')
